@@ -6,6 +6,6 @@ export const createUser = (userObj) => {
   return UserSchema(userObj).save();
 };
 
-export const getUser = () => {
-  return UserSchema.find();
+export const getUser = (id) => {
+  return UserSchema.findOne(id);
 };

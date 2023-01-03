@@ -22,18 +22,25 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.get("/", async (req, res, next) => {
+// this will be for the login function we will be using post method in this to send the parameters as the login details and check it against the database. If the result is true then we can re route the user to the dashboard since it is a good login
+//
+router.post("/login", async (req, res, next) => {
   try {
-    const result = await getUser();
+    const result = await getUser(req.body);
     // the result is coming inside the object as inside the array
+
     result?._id
       ? res.json({
           status: "success",
-          message: "The new user has been added",
+          message: "Login successfull",
+          result: {
+            name: result.name,
+            _id: result._id,
+          },
         })
       : res.json({
           status: "error",
-          message: "Cannot create the new user",
+          message: "Please check the credential",
         });
   } catch (error) {
     next(error);

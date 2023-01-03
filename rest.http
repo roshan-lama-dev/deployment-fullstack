@@ -11,3 +11,21 @@ Content-Type: application/json
 ###
 GET  http://localhost:8000/api/v1/user
 Content-Type: application/json
+
+
+###
+POST http://localhost:8000/api/v1/user/transaction
+Content-Type: application/json
+
+{
+    "name":"Expense",
+    "amount":123,
+    "type": "expense",
+    "userId":"63b1582b1acff786d5d90964"
+}
+
+###
+GET http://localhost:8000/api/v1/user/transaction
+Content-Type: application/json
+Authorization: 63b1582b1acff786d5d90969
+
