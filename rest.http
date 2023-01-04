@@ -27,5 +27,3 @@ Content-Type: application/json
 ###
 GET http://localhost:8000/api/v1/user/transaction
 Content-Type: application/json
-Authorization: 63b1582b1acff786d5d90969
-

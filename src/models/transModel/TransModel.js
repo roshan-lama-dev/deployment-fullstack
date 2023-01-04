@@ -6,5 +6,5 @@ export const createTransaction = (transObj) => {
 };
 
 export const getTransaction = (filter) => {
-  return TransSchema.findOne(filter);
+  return TransSchema.find();
 };
